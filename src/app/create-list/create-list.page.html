@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-buttons slot="start" color="light">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+
+    <ion-title>Criar Lista</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Nome da Lista</ion-label>
+    <ion-input [(ngModel)]="item.name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Produto</ion-label>
+    <ion-input [(ngModel)]="item.product" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Quantidade</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="addItem(item)" fill="block" shape="clear">
+    Adicionar item
+  </ion-button>
+</ion-content>
