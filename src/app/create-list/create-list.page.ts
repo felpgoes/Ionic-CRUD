@@ -24,10 +24,9 @@ export class CreateListPage implements OnInit {
   ngOnInit() {
   }
 
-  addItem(item: Item){
-    this.list.addItem(item).then(ref => {
-      this.NavCtrl.navigateForward('/home')
-    })
+  async addItem(item: Item){
+    await this.list.writeData(item.name, item.product, item.quantity)
+    this.NavCtrl.navigateForward('home')
   }
   
 }
