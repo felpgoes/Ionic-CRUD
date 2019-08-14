@@ -16,7 +16,7 @@
     <ion-list-header>
       Items
     </ion-list-header>
-    <ion-item *ngFor="let item of listItem | async"  [routerLink]="['/edit-list/' + item.name]" detail-push>
+    <ion-item *ngFor="let item of listItem | async"  [routerLink]="['/edit-list/' + item.key]" detail-push>
       {{item.name}}
     </ion-item>
   </ion-list>

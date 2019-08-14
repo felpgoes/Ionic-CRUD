@@ -12,7 +12,7 @@ import { NavParams, NavController } from '@ionic/angular';
 })
 export class HomePage {
 
-  listItem: Observable<Item[]>
+  listItem: any
 
   constructor(
     //public navParams: NavParams,
@@ -20,15 +20,17 @@ export class HomePage {
     private list: ListService
   ) {
 
-    this.listItem = this.list
-    .getList()
-    .snapshotChanges()
-    .pipe(map(
-      changes =>{
-        return changes.map(c => ({
-          key: c.payload.key, ...c.payload.val()
-        })) 
-      }))
+    this.listItem = this.list.getAllLists()
+    
+    // this.list
+    // .getList()
+    // .snapshotChanges()
+    // .pipe(map(
+    //   changes =>{
+    //     return changes.map(c => ({
+    //       key: c.payload.key, ...c.payload.val()
+    //     })) 
+    //   }))
   }
 
 }
