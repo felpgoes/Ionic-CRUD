@@ -21,12 +21,14 @@ export class EditListPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.item = this.route.snapshot.paramMap.get('name')
-    this.getList()
+    this.item = this.route.snapshot.paramMap.get('id')
+    this.getList(this.item)
   }
 
-  async getList(){
-    const list = await this.listService.getListByName(this.item)
+  async getList(item){
+    console.log(this.item);
+    
+    const list = await this.listService.getListById(item)
     console.log(list);
 
     
